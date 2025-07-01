@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance | Premium Men's Formalwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ELEGANCE</h1>
+                <p>Premium Formalwear</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+                    <li><a href="#" onclick="showPage('about')">About</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    <li><a href="#" onclick="showPage('cart')"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home-page" class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Elevate Your Style</h2>
+                    <p>Discover our premium collection of men's formalwear</p>
+                    <a href="#" onclick="showPage('shop')" class="btn">Shop Now</a>
+                </div>
+            </section>
+
+            <!-- Featured Categories -->
+            <section class="featured-categories">
+                <div class="container">
+                    <h2>Shop by Category</h2>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Suits">
+                            <h3>Suits</h3>
+                            <a href="#" onclick="showPage('shop', 'suits')" class="btn">View Collection</a>
+                        </div>
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shirts">
+                            <h3>Shirts</h3>
+                            <a href="#" onclick="showPage('shop', 'shirts')" class="btn">View Collection</a>
+                        </div>
+                        <div class="category-card">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shoes">
+                            <h3>Shoes</h3>
+                            <a href="#" onclick="showPage('shop', 'shoes')" class="btn">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="featured-products">
+                <div class="container">
+                    <h2>Best Sellers</h2>
+                    <div class="product-grid" id="featured-products">
+                        <!-- Product cards will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page" style="display:none;">
+            <section class="about-hero hero">
+                <h2>Our Story</h2>
+            </section>
+
+            <section class="about-content">
+                <div class="container">
+                    <div class="about-text">
+                        <h3>Who We Are</h3>
+                        <p>Founded in 2010, Elegance has been providing premium men's formalwear to discerning gentlemen who appreciate quality craftsmanship and timeless style. What began as a small boutique in Cape Town City has grown into a respected name in men's fashion.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>We believe every man deserves to look and feel his best, especially for those important occasions. Our mission is to provide high-quality, well-crafted formalwear that combines traditional elegance with modern comfort.</p>
+                        
+                        <h3>Our Values</h3>
+                        <ul>
+                            <li>Quality craftsmanship</li>
+                            <li>Exceptional customer service</li>
+                            <li>Timeless style</li>
+                            <li>Sustainable practices</li>
+                        </ul>
+                    </div>
+                    <div class="about-images">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our store">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our team">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page" style="display:none;">
+            <section class="contact-hero hero">
+                <h2>Get In Touch</h2>
+            </section>
+
+            <section class="contact-content">
+                <div class="container">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Fashion Avenue<br>Cape Town, Western Cape</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(078) 369-2624</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@elegance.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                        </div>
+                        <div class="map-container">
+                            <!-- Google Map Embed -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.9878449245377!3d40.74844097138998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689877721234!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Shop Page -->
+        <div id="shop-page" class="page" style="display:none;">
+            <section class="shop-hero hero">
+                <h2>Shop Our Collection</h2>
+            </section>
+
+            <section class="shop-content">
+                <div class="container">
+                    <div class="shop-sidebar">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#" onclick="showPage('shop')">All Products</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'suits')">Suits</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'jackets')">Jackets</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'shirts')">Shirts</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'trousers')">Trousers</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'blazers')">Blazers</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'knitwear')">Knitwear</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'polos')">Polos</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'jeans')">Jeans</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'shoes')">Shoes</a></li>
+                            <li><a href="#" onclick="showPage('shop', 'accessories')">Accessories</a></li>
+                        </ul>
+
+                        <h3>Filter By</h3>
+                        <div class="filter-group">
+                            <h4>Price</h4>
+                            <select id="price-filter">
+                                <option value="all">All Prices</option>
+                                <option value="0-100">R0 - R100</option>
+                                <option value="100-200">R100 - R200</option>
+                                <option value="200-500">R200 - R500</option>
+                                <option value="500+">R500+</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Sort By</h4>
+                            <select id="sort-by">
+                                <option value="default">Default</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A-Z</option>
+                                <option value="name-desc">Name: Z-A</option>
+                            </select>
+                        </div>
+                        <button id="apply-filters" class="btn" onclick="applyFilters()">Apply Filters</button>
+                    </div>
+                    <div class="shop-main">
+                        <div class="products-header">
+                            <h3 id="category-title">All Products</h3>
+                            <p id="product-count">Loading products...</p>
+                        </div>
+                        <div class="product-grid" id="shop-products">
+                            <!-- Product cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Product Page -->
+        <div id="product-page" class="page" style="display:none;">
+            <section class="product-content">
+                <div class="container">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="main-product-image" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product Name">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product thumbnail 1" class="thumbnail active" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product thumbnail 2" class="thumbnail" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product thumbnail 3" class="thumbnail" onclick="changeMainImage(this)">
+                            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Product thumbnail 4" class="thumbnail" onclick="changeMainImage(this)">
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h1 id="product-title">Premium Navy Blue Suit</h1>
+                        <div class="product-price">
+                            <span class="current-price">R299.99</span>
+                            <span class="original-price">R399.99</span>
+                            <span class="discount">25% OFF</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="review-count">(42 reviews)</span>
+                        </div>
+                        <div class="product-description">
+                            <p>Our premium navy blue suit is crafted from high-quality wool blend fabric for exceptional comfort and durability. The tailored fit provides a modern silhouette that flatters all body types. Perfect for business meetings, weddings, and formal occasions.</p>
+                            <ul>
+                                <li>65% Wool, 35% Polyester</li>
+                                <li>Notch lapel, single-breasted</li>
+                                <li>Two-button closure</li>
+                                <li>Two front flap pockets and one chest pocket</li>
+                                <li>Lined interior with functional buttonholes</li>
+                            </ul>
+                        </div>
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="size">Size</label>
+                                <select id="size">
+                                    <option value="">Select Size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">X-Large</option>
+                                    <option value="XXL">XX-Large</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color">Color</label>
+                                <select id="color">
+                                    <option value="">Select Color</option>
+                                    <option value="navy">Navy Blue</option>
+                                    <option value="charcoal">Charcoal</option>
+                                    <option value="black">Black</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="quantity">Quantity</label>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn minus" onclick="adjustQuantity(-1)">-</button>
+                                    <input type="number" id="quantity" value="1" min="1">
+                                    <button class="quantity-btn plus" onclick="adjustQuantity(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <button id="add-to-cart" class="btn" onclick="addToCart()">Add to Cart</button>
+                            <button id="wishlist" class="btn secondary"><i class="far fa-heart"></i> Add to Wishlist</button>
+                        </div>
+                        <div class="product-meta">
+                            <p><strong>SKU:</strong> ELG-SUIT-001</p>
+                            <p><strong>Category:</strong> <a href="#" onclick="showPage('shop', 'suits')">Suits</a></p>
+                            <p><strong>Tags:</strong> <a href="#">formal</a>, <a href="#">business</a>, <a href="#">wedding</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-tabs">
+                <div class="container">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="description" onclick="changeTab('description')">Description</button>
+                        <button class="tab-btn" data-tab="details" onclick="changeTab('details')">Additional Information</button>
+                        <button class="tab-btn" data-tab="reviews" onclick="changeTab('reviews')">Reviews (42)</button>
+                    </div>
+                    <div class="tab-content active" id="description">
+                        <h3>Product Description</h3>
+                        <p>This premium navy blue suit is part of our Signature Collection, designed for the modern professional who values both style and comfort. The fabric is a luxurious wool blend that drapes beautifully while providing breathability and wrinkle resistance.</p>
+                        <p>The jacket features a classic notch lapel, two-button closure, and functional sleeve buttons. The trousers have a modern slim fit with a flat front and adjustable waist tabs for a perfect fit.</p>
+                    </div>
+                    <div class="tab-content" id="details">
+                        <h3>Additional Information</h3>
+                        <table>
+                            <tr>
+                                <th>Fabric</th>
+                                <td>65% Wool, 35% Polyester</td>
+                            </tr>
+                            <tr>
+                                <th>Fit</th>
+                                <td>Tailored Slim Fit</td>
+                            </tr>
+                            <tr>
+                                <th>Closure</th>
+                                <td>Two-button single breasted</td>
+                            </tr>
+                            <tr>
+                                <th>Lining</th>
+                                <td>100% Cupro</td>
+                            </tr>
+                            <tr>
+                                <th>Care Instructions</th>
+                                <td>Dry clean only</td>
+                            </tr>
+                            <tr>
+                                <th>Origin</th>
+                                <td>Imported</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tab-content" id="reviews">
+                        <h3>Customer Reviews</h3>
+                        <div class="review-summary">
+                            <div class="average-rating">
+                                <span>4.5</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Based on 42 reviews</p>
+                            </div>
+                        </div>
+                        <div class="review-list">
+                            <!-- Reviews would be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="related-products">
+                <div class="container">
+                    <h2>You May Also Like</h2>
+                    <div class="product-grid" id="related-products">
+                        <!-- Related products would be populated here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Cart Page -->
+        <div id="cart-page" class="page" style="display:none;">
+            <section class="cart-hero hero">
+                <h2>Your Shopping Cart</h2>
+            </section>
+
+            <section class="cart-content">
+                <div class="container">
+                    <div class="cart-items">
+                        <div class="cart-header">
+                            <div class="header-item product">Product</div>
+                            <div class="header-item price">Price</div>
+                            <div class="header-item quantity">Quantity</div>
+                            <div class="header-item subtotal">Subtotal</div>
+                        </div>
+                        <div id="cart-items-list">
+                            <!-- Cart items will be populated by JavaScript -->
+                        </div>
+                        <div class="cart-actions">
+                            <a href="#" onclick="showPage('shop')" class="btn secondary">Continue Shopping</a>
+                            <button class="btn" id="update-cart" onclick="updateCart()">Update Cart</button>
+                        </div>
+                    </div>
+                    <div class="cart-summary">
+                        <h3>Cart Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">R0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="cart-shipping">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span id="cart-tax">R0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">R0.00</span>
+                        </div>
+                        <button class="btn checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-discover"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>ELEGANCE</h3>
+                <p>Premium men's formalwear for the modern gentleman.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+                    <li><a href="#" onclick="showPage('about')">About</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Fashion Avenue</p>
+                <p>Cape Town, WC 8001</p>
+                <p>info@elegance.com</p>
+                <p>(078) 369-2624</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Elegance Formalwear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
